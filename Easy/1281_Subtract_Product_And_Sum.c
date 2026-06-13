@@ -1,25 +1,17 @@
-#include <stdio.h>
-
-int main()
+int subtractProductAndSum(int n)
 {
-    int n, digit;
     int product = 1;
     int sum = 0;
 
-    printf("Enter a number: ");
-    scanf("%d", &n);
-
     while(n > 0)
     {
-        digit = n % 10;
+        int digit = n % 10;
 
-        product = product * digit;
-        sum = sum + digit;
+        product *= digit;
+        sum += digit;
 
-        n = n / 10;
+        n /= 10;
     }
 
-    printf("Result = %d\n", product - sum);
-
-    return 0;
+    return product - sum;
 }
